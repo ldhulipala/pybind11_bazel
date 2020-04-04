@@ -39,9 +39,6 @@ def pybind_extension(
         name = name + ".so",
         copts = copts + PYBIND_COPTS + ["-fvisibility=hidden"],
         features = features + PYBIND_FEATURES,
-        linkopts = [
-            "-Wl", # remove -Bsymbolic (not available using clang)
-        ],
         linkshared = 1,
         tags = tags + ["local", "manual"],
         deps = deps + PYBIND_DEPS,
